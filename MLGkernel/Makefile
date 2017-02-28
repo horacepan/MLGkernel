@@ -1,7 +1,7 @@
 ROOTDIR= ../
 include $(ROOTDIR)/Makefile.base
 
-CFLAGS= -std=c++11 -I $(INCLUDEDIR) -I $(UTILITYDIR) -I $(FILETYPESDIR) -I $(MATRIXDIR) 
+CFLAGS= -std=c++11 -I $(INCLUDEDIR) -I $(UTILITYDIR) -I $(FILETYPESDIR) -I $(MATRIXDIR) -fPIC
 LIBS= -lstdc++ -lm -lpthread
 
 ALLOBJECTS= $(UTILITYDIR)/*.o $(MATRIXDIR)/*.o  *.o    #$(BLOCKEDDIR)/*.o 

@@ -1,7 +1,7 @@
 ROOTDIR=..
 include $(ROOTDIR)/Makefile.base
 
-CFLAGS+= #-std=c++11 
+CFLAGS+= -fPIC#-std=c++11
 INCLUDE= -I$(INCLUDEDIR) -I$(UTILITYDIR) -I$(FILETYPESDIR) #-I$(MATRIXDIR) 
 OBJFILES= $(UTILITYDIR)/*.o $(FILETYPESDIR)/*.o ./*.o  
 LIBS= -lstdc++ -lm 
@@ -19,7 +19,7 @@ endif
 
 
 matrices.o: *.hpp *.cpp 
-	$(CC) -c matrices.cpp $(CFLAGS) $(INCLUDE) $(LMACROS) 
+	$(CC) -c matrices.cpp $(CFLAGS) $(INCLUDE) $(LMACROS)
 
 
 objects: matrices.o 

@@ -1,7 +1,7 @@
 ROOTDIR= ..
 include $(ROOTDIR)/Makefile.base
 
-CFLAGS+= -I $(INCLUDEDIR) -I $(UTILITYDIR) -I $(MATRIXDIR) # -std=c++11
+CFLAGS+= -I $(INCLUDEDIR) -I $(UTILITYDIR) -I $(MATRIXDIR) -fPIC # -std=c++11
 
 
 Log.o: Log.hpp Log.cpp

@@ -28,13 +28,13 @@
 #define _MLGdataset
 
 #include "MLGgraph.hpp"
-
+#include <string>
 
 class MLGdataset{
 public:
 
   MLGdataset(){}
-  MLGdataset(const string filename, double eta, double gamma, bool grow): gamma(gamma), grow(grow), eta(eta){
+  MLGdataset(const std::string filename, double eta, double gamma, bool grow): gamma(gamma), grow(grow), eta(eta){
     loadGraphs(filename);
   }
   ~MLGdataset() {for(auto p:graphs) delete p;}
@@ -46,10 +46,10 @@ public:
 
 public:
 
-  void loadGraphs(string filename);
-  void loadDiscreteFeatures(string filename, int numFeatures);
-  void loadFeatures(string filename);
-  void saveGram(string filename);
+  void loadGraphs(std::string filename);
+  void loadDiscreteFeatures(std::string filename, int numFeatures);
+  void loadFeatures(std::string filename);
+  void saveGram(std::string filename);
 
 public:
 

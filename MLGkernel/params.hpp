@@ -64,8 +64,8 @@ save the resulting gram matrix.
       cout << "    -num_threads    : "          << num_threads<<endl;
     }
   public:
-    const static bool GROW = 1; // subgraphs increase by given radius size at every level
-    const static bool DOUBLE = 0; // subgraphs double at each level
+    static const bool GROW = 1; // subgraphs increase by given radius size at every level
+    static const bool DOUBLE = 0; // subgraphs double at each level
 
     // MLGkernel model parameter defaults.
     double eta = 0.1;

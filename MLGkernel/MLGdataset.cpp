@@ -29,6 +29,7 @@
 #include "FLGkernel.hpp"
 #include "MatrixOF_ASCII.hpp"
 #include "params.hpp"
+#include <string>
 
 void MLGdataset::condense(const int nlevels, const int leaf_radius){
   assert(nlevels>0);
@@ -91,7 +92,7 @@ void MLGdataset::computeGram(int levels, int radius){
 }
 
 
-void MLGdataset::loadGraphs(string filename){
+void MLGdataset::loadGraphs(std::string filename){
   ifstream ifs(filename);
   if(ifs.fail()){cout<<"Failed to open "<<filename<<"."<<endl; exit(0);}
 
@@ -113,7 +114,7 @@ void MLGdataset::loadGraphs(string filename){
   assert(numGraphs == graphs.size());
 }
 
-void MLGdataset::loadDiscreteFeatures(string filename, int numFeatures){
+void MLGdataset::loadDiscreteFeatures(std::string filename, int numFeatures){
   ifstream ifs(filename);
   if(ifs.fail()){
     cout << "Failed to open " << filename << "." << endl;
@@ -138,7 +139,7 @@ void MLGdataset::loadDiscreteFeatures(string filename, int numFeatures){
   assert(graphIndex == graphs.size());
 }
 
-void MLGdataset::loadFeatures(string filename){
+void MLGdataset::loadFeatures(std::string filename){
 // Add features to each graph from a feature ascii file
   ifstream ifs(filename);
   if(ifs.fail()){
@@ -169,7 +170,7 @@ void MLGdataset::loadFeatures(string filename){
   assert(graphIndex == graphs.size());
 }
 
-void MLGdataset::saveGram(string filename){
+void MLGdataset::saveGram(std::string filename){
   cout << "Saving gram to " << filename << endl;
   MatrixOF_ASCII::Dense file(filename,gram.nrows,gram.ncols);
   gram.saveTo(file);
