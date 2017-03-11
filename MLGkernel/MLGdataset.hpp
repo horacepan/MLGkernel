@@ -50,6 +50,7 @@ public:
   void loadDiscreteFeatures(std::string filename, int numFeatures);
   void loadFeatures(std::string filename);
   void saveGram(std::string filename);
+  void fillGram(double *npmatrix, int rows, int cols);
 
 public:
 

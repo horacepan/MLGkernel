@@ -175,3 +175,20 @@ void MLGdataset::saveGram(std::string filename){
   MatrixOF_ASCII::Dense file(filename,gram.nrows,gram.ncols);
   gram.saveTo(file);
 }
+
+/* fillGram: Only used in the python interface. Call it with a numpy matrix
+ * of zeros. The given np matrix is then filled with the values from
+ * the gram matrix. Assumes that computeGram has been called beforehand
+ * and that the size of the numpy matrix is equal to n-by-n, where n = number
+ * of graphs in the dataset.
+ */
+void MLGdataset::fillGram(double *npmatrix, int rows, int cols) {
+  // rows == cols == graphs.size()
+  int index;
+  for(int i=0; i<rows; i++) {
+    for(int j=0; j<cols; j++) {
+      index = (i * cols) + j;
+      npmatrix[index] = gram(i, j);
+    }
+  }
+}

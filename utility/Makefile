@@ -28,15 +28,15 @@ ThreadBank.o: ThreadBank.hpp ThreadBank.cpp
 ThreadManager.o: ThreadManager.hpp ThreadManager.cpp ThreadBank.hpp 
 	$(CC) -c ThreadManager.cpp $(CFLAGS)
 
-Graph.o: Graph.cpp Graph.hpp
-	$(CC) -c Graph.cpp $(CFLAGS) $(INCLUDE) 
+#Graph.o: Graph.cpp Graph.hpp
+#	$(CC) -c Graph.cpp $(CFLAGS) $(INCLUDE)
 
 filetypes.o: filetypes/*.hpp filetypes/*.cpp  
 	$(CC) -c filetypes/filetypes.cpp $(CFLAGS) $(INCLUDE) -I filetypes/ $(MACROS) 
 
 
 objects: Log.o Rstream.o Bofstream.o Bifstream.o Serializable.o TopkList.o \
-ThreadBank.o ThreadManager.o Graph.o filetypes.o
+ThreadBank.o ThreadManager.o filetypes.o #Graph.o
 
 tests:
 

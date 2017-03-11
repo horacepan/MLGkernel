@@ -1,7 +1,7 @@
 ROOTDIR= ../../
 include $(ROOTDIR)/Makefile.base
 
-CFLAGS= -std=c++11 
+CFLAGS= -std=c++11 -fPIC
 INCLUDE= -I$(INCLUDEDIR) -I$(UTILITYDIR) 
 
 LIBS= -lstdc++ -lm -lpthread
